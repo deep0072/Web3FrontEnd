@@ -1,0 +1,1 @@
+export const Erc20ContractAddress = '0x8115d8e8C488C367ea7093d71844A298507a021b'
