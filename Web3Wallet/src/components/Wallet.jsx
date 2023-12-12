@@ -7,6 +7,7 @@ import {
   useDisconnect,
 } from "wagmi";
 import { Erc20Contracts, Erc20ContractsWrite } from "./Erc20Contracts";
+import GetWalletInfo from "./GetWalletInfo";
 
 const Wallet = () => {
   const { disconnect } = useDisconnect();
@@ -18,8 +19,9 @@ const Wallet = () => {
   });
 
   const [toggleErc20Contract, setToggleErc20Contract] = useState(false);
-  console.log(toggleErc20Contract, "toggleErc20Contract");
-  console.log(address, "address");
+  // console.log(toggleErc20Contract, "toggleErc20Contract");
+  // console.log(address, "address");
+  console.log(data)
 
   return (
     <>
@@ -37,7 +39,7 @@ const Wallet = () => {
               " (connecting)"}
             <div style={{position: 'fixed', top: 0, left: 0,margin:'20px'}}>{address? <div>wallet address: {address}</div> :""}</div>
 
-            <div style={{position: 'fixed', top: 0, left: 0,height:'200px',margin:'20px'}}>{address? <h3>wallet balance: { data.formatted} </h3> : ""}</div>
+            <div style={{position: 'fixed', top: 0, left: 0,height:'200px',margin:'20px'}}>{address? <h3>wallet balance: { data?.formatted} </h3> : ""}</div>
           </button>
         ))}
         `{" "}
@@ -58,7 +60,13 @@ const Wallet = () => {
         {!isDisconnected && (
           <button onClick={() => disconnect()}>disconnect</button>
         )}
+
+
       </div>
+
+      <GetWalletInfo />
+
+      
     </>
   );
 };

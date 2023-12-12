@@ -20,7 +20,7 @@ export const Erc20Contracts = ({ OwnerAddress }) => {
   });
   // console.log(typeof (data[0].result), "data")
 
-  console.log(OwnerAddress);
+  console.log(data, "data..");
 
   return (
     <div>

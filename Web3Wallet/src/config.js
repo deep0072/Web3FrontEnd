@@ -10,7 +10,7 @@ import { WalletConnectConnector } from 'wagmi/connectors/walletConnect'
 
 const { chains, publicClient } = configureChains(
     [sepolia],
-    [alchemyProvider({ apiKey: 'your keys' })],
+    [alchemyProvider({ apiKey: '9YRSRcfvmLC4U194tkYHkjJSiDtZ7Wqq' })],
   )
 
 
@@ -21,5 +21,8 @@ export const config = createConfig({
       new InjectedConnector({ chains })],
     
     publicClient,
+    options: {
+      shimDisconnect: false,
+    },
 
   })
